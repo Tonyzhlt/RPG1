@@ -1,8 +1,12 @@
+    
+
 class GameObject {
     int hp;
     PVector location;
     PVector velocity;
-  
+    int lives;
+    int size;
+
  
     
     GameObject() {

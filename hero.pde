@@ -2,7 +2,7 @@
 
 
 class Hero extends GameObject {
-
+  Weapon myWeapon; 
   PVector direction;
   float speed;
   int roomX, roomY;
@@ -17,6 +17,7 @@ class Hero extends GameObject {
     velocity = new PVector(0, 0);
     direction = new PVector (0, -0.1);
   
+    myWeapon = new Weapon();
  
     
     roomX=1;
@@ -95,6 +96,7 @@ class Hero extends GameObject {
       
     } 
     
-    
+    myWeapon.update();
+    if(spacekey) myWeapon. shoot();
   }
 }

@@ -1,5 +1,6 @@
 PFont orbitron;
 Hero myHero;
+
 PImage hutao;
 PImage map;
 color northRoom, southRoom, eastRoom, westRoom; 
@@ -15,9 +16,10 @@ ArrayList<DarknessCell> darkness;
 
 
 
+
 boolean upkey, downkey, leftkey, rightkey, spacekey, fkey;
 
-color blue   = #000000;;
+color blue   = #000000;
 color green  = #CEF255;
 color pink   = #FFFFFF;
 color yellow = #FFF387;
