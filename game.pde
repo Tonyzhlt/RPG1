@@ -2,11 +2,7 @@
 void games() {
   drawRoom();
   drawGameObjects();
-
   drawLightLayer();
-
-
-
   myHero.show();
   myHero.act();
   int ii = 1;
@@ -20,8 +16,10 @@ void games() {
 
 
 void drawRoom() {
+  
   translate(0, 0);
-  background(#152681);
+
+ background(0,0,255);
   //noStroke();
   //fill(#3B6718);
   //rect(700,25,1400,50);
@@ -33,8 +31,6 @@ void drawRoom() {
   eastRoom = map.get(myHero.roomX+1, myHero.roomY);
   southRoom = map.get(myHero.roomX, myHero.roomY+1);
   westRoom = map.get(myHero.roomX-1, myHero.roomY);
-
-
 
   fill(#666F07);
   if (northRoom != #FFFFFF) {
@@ -49,23 +45,25 @@ void drawRoom() {
   if (westRoom != #FFFFFF) {
     ellipse(width*0.05, height/2, 100, 100);
   }
-
   rectMode(CENTER);
   stroke(0);
-  fill(#BCB5C1);
+  
+  fill(#C4AD51);
   rect(width/2, height/2, width*0.9, height*0.9);
 }
 
 void drawGameObjects() {
-  int i = 0;
-  while (i<myObjects.size()) {
+
+  for ( int i = 0; i<myObjects.size(); i++) {
     GameObject myObj = myObjects.get(i);
-    myObj.show();
-    myObj.act();
-    if (myObj.lives == 0) {
-      myObjects. remove(i);
-    } else {
-      i++;
+    if (myObj.roomX == myHero.roomX && myObj.roomY == myHero.roomY) {
+      myObj.show();
+      myObj.act();
+      if (myObj.hp <= 0) {
+        myObjects. remove(i);
+
+        i--;
+      }
     }
   }
 }
@@ -84,7 +82,8 @@ void drawMinimap() {
     fill(c);
     noStroke();
     square(x*10+80, y*10+80, size);
-    fill(255, 0, 0);
+    fill(255, 150, 50);
+  
     square(myHero.roomX*10+80, myHero.roomY*10+80, size);
     x += 1;
     if (x >= map.width) {

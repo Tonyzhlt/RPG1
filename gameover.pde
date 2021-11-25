@@ -1,5 +1,6 @@
 void gameover() {
- 
+  
+  fill(0);
   
   
   
@@ -7,7 +8,4 @@ void gameover() {
 
 void gameoverClick() {
   mode = 0;
-  
-  
-  
 }
