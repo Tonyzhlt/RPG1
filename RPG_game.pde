@@ -27,7 +27,7 @@ ArrayList<DarknessCell> darkness;
 
 //dropitem
 final int ammo = 7;
-final int health = 8;
+final int HEALTH = 8;
 final int GUN = 9; 
 
 
@@ -74,7 +74,7 @@ void setup () {
   myHero= new Hero();
   myObjects = new ArrayList<GameObject>(1000);
   
-  //initialize loading enemy
+  //initialize loading enemy =====================================================
   x=0;
   y=0; 
   while ( y < map.height) {
@@ -88,13 +88,16 @@ void setup () {
       myObjects.add(new gunfollower(x,y));
     }
     if (roomColor == red) {
-      
+       myObjects.add( new Follower(x,y));
+      myObjects.add(new gunfollower(x,y));
     }
     if (roomColor == green) {
-      
+       myObjects.add( new Follower(x,y));
+      myObjects.add(new gunfollower(x,y));
     }
     if (roomColor == black) {
-      
+       myObjects.add( new Follower(x,y));
+      myObjects.add(new gunfollower(x,y));
     }
     x++;
     if (x == map.width) {
@@ -102,6 +105,7 @@ void setup () {
       y++;
     }
   }
+  //============================================================================
   
   
   //add objects

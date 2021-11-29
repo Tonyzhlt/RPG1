@@ -1,5 +1,5 @@
 class machinegun extends Weapon {
   machinegun() {
-    super(5, 10);
+    super(5, 50);
   }
 }

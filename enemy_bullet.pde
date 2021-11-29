@@ -24,7 +24,7 @@ class enemybullet extends GameObject {
 
   void act() {
     location.add(velocity);
-    print("i");
+    
    
     if (location.y <= 50)  hp=0;
     if (location.y >= 800) hp=0;

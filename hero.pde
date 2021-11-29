@@ -27,7 +27,7 @@ class Hero extends GameObject {
     //rotate(direction.heading());
     //image (hutao, 0, 0);
     currentAction.show(location.x, location.y, size/1.5, size);
-    print("hi");
+    
     if (Cdown != 0) {
       translate(location.x, location.y);
       stroke(0, 255, 0);
@@ -144,6 +144,9 @@ class Hero extends GameObject {
 
         if (dist(location.x, location.y, myObj.location.x, myObj.location.y) <= size/2 + myObj.size) {
           dropitem item = (dropitem) myObj;
+          if (item.type == HEALTH) {
+            hp = hp + 3000;
+          }
           if (item.type == GUN) {
             myWeapon = item.w;
             item.hp = 0;

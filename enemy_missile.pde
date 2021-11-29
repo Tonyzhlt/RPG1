@@ -1,7 +1,7 @@
 class missile extends Enemy {
   int shotTimer, threshold;
     missile(int x, int y) {
-    super(10000, 50, x, y, 1300, 70);
+    super(1000, 50, x, y, 1300, 70);
     shotTimer = 0;
     threshold = 30;
   }
